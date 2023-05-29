@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'controller/regi_controller.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  Homepage({super.key});
+
+  final RegiController controller = Get.put(RegiController());
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,9 @@ class Homepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.registration();
+                  },
                   child: Text("Register Now"),
                 ),
                 SizedBox(
@@ -52,6 +59,7 @@ class Homepage extends StatelessWidget {
 }
 
 class boxdesign extends StatelessWidget {
+  final RegiController controller = Get.put(RegiController());
   String hinTxt;
   boxdesign({
     super.key,
